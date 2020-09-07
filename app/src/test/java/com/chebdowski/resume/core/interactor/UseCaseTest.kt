@@ -1,6 +1,5 @@
 package com.chebdowski.resume.core.interactor
 
-import android.os.Looper
 import com.chebdowski.resume.AndroidTest
 import com.chebdowski.resume.core.exception.Failure
 import com.chebdowski.resume.core.functional.Either
@@ -8,12 +7,9 @@ import com.chebdowski.resume.core.functional.Either.Right
 import kotlinx.coroutines.runBlocking
 import org.amshove.kluent.`should be equal to`
 import org.junit.Test
-import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
-import org.robolectric.annotation.LooperMode
 
 @Config(manifest = Config.NONE)
-@LooperMode(LooperMode.Mode.PAUSED)
 class UseCaseTest : AndroidTest() {
 
     private val testParam = "TestParam"
@@ -24,7 +20,7 @@ class UseCaseTest : AndroidTest() {
     fun `Use case should return 'Either' of use case type`() {
         val params = TestParams(testParam)
         val result = runBlocking { useCase.run(params) }
-        shadowOf(Looper.getMainLooper()).idle()
+
         result `should be equal to` Right(TestType(testTypeParam))
     }
 
@@ -35,7 +31,7 @@ class UseCaseTest : AndroidTest() {
         val onResult = { testResult: Either<Failure, TestType> -> result = testResult }
 
         runBlocking { useCase(params, onResult) }
-        shadowOf(Looper.getMainLooper()).idle()
+
         result `should be equal to` Right(TestType(testTypeParam))
     }
 
