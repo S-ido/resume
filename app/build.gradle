@@ -31,16 +31,20 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    // Koin for Android
+
+    // Dependency Injection
     implementation "org.koin:koin-android:$koin_version"
-    // Koin Android Scope features
     implementation "org.koin:koin-android-scope:$koin_version"
-    // Koin Android ViewModel features
     implementation "org.koin:koin-android-viewmodel:$koin_version"
-    // Koin Android Experimental features
     implementation "org.koin:koin-android-ext:$koin_version"
 
+    // Networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
 
+    // Test
     testImplementation 'junit:junit:4.13'
     testImplementation 'org.mockito:mockito-core:3.5.10'
     testImplementation 'org.amshove.kluent:kluent:1.61'

@@ -4,5 +4,9 @@ import com.chebdowski.resume.features.resume.PersonRepository
 import org.koin.dsl.module
 
 val applicationModule = module {
-    single { PersonRepository() }
+    single { providePersonRepository() }
+}
+
+fun providePersonRepository(): PersonRepository {
+    return PersonRepository.RemotePersonRepository()
 }
