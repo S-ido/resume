@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.chebdowski.resume.R
+import com.chebdowski.resume.core.platform.BaseFragment
 
-class ResumeFragment : Fragment() {
+class ResumeFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = ResumeFragment()
