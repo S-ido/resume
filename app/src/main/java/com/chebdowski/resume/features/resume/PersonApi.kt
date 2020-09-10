@@ -1,5 +1,6 @@
 package com.chebdowski.resume.features.resume
 
+import retrofit2.Call
 import retrofit2.http.GET
 
 interface PersonApi {
@@ -9,5 +10,5 @@ interface PersonApi {
     }
 
     @GET(PERSON)
-    fun person(): PersonEntity
+    fun person(): Call<PersonEntity>
 }

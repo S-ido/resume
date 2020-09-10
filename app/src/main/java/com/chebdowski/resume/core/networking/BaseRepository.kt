@@ -1,0 +1,23 @@
+package com.chebdowski.resume.core.networking
+
+import com.chebdowski.resume.core.exception.Failure
+import com.chebdowski.resume.core.exception.Failure.ServerError
+import com.chebdowski.resume.core.functional.Either
+import com.chebdowski.resume.core.functional.Either.Left
+import com.chebdowski.resume.core.functional.Either.Right
+import retrofit2.Call
+
+abstract class BaseRemoteRepository {
+
+    protected fun <T, R> request(call: Call<T>, transform: (T) -> R, default: T): Either<Failure, R> {
+        return try {
+            val response = call.execute()
+            when (response.isSuccessful) {
+                true -> Right(transform((response.body() ?: default)))
+                false -> Left(ServerError)
+            }
+        } catch (exception: Throwable) {
+            Left(ServerError)
+        }
+    }
+}

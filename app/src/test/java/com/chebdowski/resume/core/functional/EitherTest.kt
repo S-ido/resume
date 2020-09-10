@@ -23,7 +23,7 @@ class EitherTest : UnitTest() {
                 left `should be instance of` String::class.java
                 left `should be equal to` "left"
             },
-            {})
+            { /** ignore right **/ })
     }
 
     @Test
@@ -35,7 +35,7 @@ class EitherTest : UnitTest() {
         result.isLeft `should be` false
 
         result.either(
-            {},
+            { /** ignore left **/ },
             { right ->
                 right `should be instance of` String::class.java
                 right `should be equal to` "right"

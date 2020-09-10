@@ -27,5 +27,4 @@ class ResumeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ResumeViewModel::class.java)
     }
-
 }
