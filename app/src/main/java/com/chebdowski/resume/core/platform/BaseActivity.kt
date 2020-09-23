@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.chebdowski.resume.R.id
 import com.chebdowski.resume.R.layout
 import com.chebdowski.resume.core.extension.inTransaction
-import kotlinx.android.synthetic.main.toolbar.*
 
 abstract class BaseActivity : AppCompatActivity() {
 
@@ -13,7 +12,6 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(layout.resume_activity)
-        setSupportActionBar(toolbar)
         addFragment(savedInstanceState)
     }
 
@@ -23,9 +21,4 @@ abstract class BaseActivity : AppCompatActivity() {
         }
 
     abstract fun fragment(): BaseFragment
-
-    override fun onBackPressed() {
-        (supportFragmentManager.findFragmentById(id.fragmentContainer) as BaseFragment).onBackPressed()
-        super.onBackPressed()
-    }
 }

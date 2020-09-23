@@ -22,8 +22,29 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerVersion "$kotlin_version"
+        kotlinCompilerExtensionVersion "1.0.0-alpha03"
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs += ["-Xallow-jvm-ir-dependencies", "-Xskip-prerelease-check"]
     }
 }
 
@@ -38,7 +59,7 @@ dependencies {
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     implementation 'com.google.android.material:material:1.2.1'
 
-    // Android compose
+    // Jetpack compose
     implementation "androidx.compose.ui:ui:1.0.0-alpha03"
     implementation "androidx.compose.ui:ui:1.0.0-alpha03"
     implementation "androidx.compose.foundation:foundation:1.0.0-alpha03"
@@ -48,8 +69,8 @@ dependencies {
     implementation "androidx.compose.runtime:runtime:1.0.0-alpha03"
     implementation "androidx.compose.runtime:runtime-livedata:1.0.0-alpha03"
     implementation "androidx.ui:ui-tooling:1.0.0-alpha03"
-    implementation "androidx.compose.test:test-core:1.0.0-alpha03"
     implementation "androidx.ui:ui-test:1.0.0-alpha03"
+    implementation "dev.chrisbanes.accompanist:accompanist-coil:0.2.2"
 
     // Dependency Injection
     implementation "org.koin:koin-android:$koin_version"
@@ -62,6 +83,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:okhttp:4.8.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     // Test
     testImplementation 'junit:junit:4.13'
