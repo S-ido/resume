@@ -12,16 +12,13 @@ val networkModule = module {
     single { provideRetrofit(get()) }
 }
 
-fun provideOkHttpClient(): OkHttpClient {
-    return OkHttpClient.Builder().build()
-}
+fun provideOkHttpClient() = OkHttpClient.Builder().build()
 
-fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-    return Retrofit.Builder()
+fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
+    Retrofit.Builder()
         .baseUrl("https://gist.github.com/S-ido/")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-}
 
 fun providePersonApi(retrofit: Retrofit): PersonApi = retrofit.create(PersonApi::class.java)
