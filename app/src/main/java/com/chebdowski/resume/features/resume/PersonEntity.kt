@@ -1,10 +1,14 @@
 package com.chebdowski.resume.features.resume
 
-data class PersonEntity(private val firstName: String, private val lastName: String, private val pictureUrl: String) {
+data class PersonEntity(
+    private val firstName: String,
+    private val lastName: String,
+    private val position: String,
+    private val pictureUrl: String) {
 
     companion object {
-        fun empty() = PersonEntity("", "", "")
+        fun empty() = PersonEntity("", "", "", "")
     }
 
-    fun toPerson() = Person(firstName, lastName, pictureUrl)
+    fun toPerson() = Person(firstName, lastName, position, pictureUrl)
 }
