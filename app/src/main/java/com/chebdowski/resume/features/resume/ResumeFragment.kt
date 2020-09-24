@@ -16,8 +16,8 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.DensityAmbient
 import com.chebdowski.resume.R
 import com.chebdowski.resume.core.exception.Failure
-import com.chebdowski.resume.core.extension.failure
-import com.chebdowski.resume.core.extension.observe
+import com.chebdowski.resume.core.extension.failureAsState
+import com.chebdowski.resume.core.extension.observeAsState
 import com.chebdowski.resume.core.platform.BaseFragment
 import dev.chrisbanes.accompanist.coil.CoilImage
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -29,8 +29,8 @@ class ResumeFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return ComposeView(context = requireContext()).apply {
             setContent {
-                observe(viewModel.person, ::HandlePerson)
-                failure(viewModel.failure, ::HandleFailure)
+                HandlePerson(observeAsState(viewModel.person))
+                HandleFailure(failureAsState(viewModel.failure))
             }
         }
     }
@@ -42,7 +42,7 @@ class ResumeFragment : BaseFragment() {
     }
 
     @Composable
-    private fun HandlePerson(person: Person?) {
+    fun HandlePerson(person: Person?) {
         println("handle Person")
 
         val scrollState = rememberScrollState()
@@ -52,7 +52,7 @@ class ResumeFragment : BaseFragment() {
             scrollState = scrollState
         ) {
             if (person == null) {
-                TODO("Handle null person data")
+                println("Null person data")
             } else {
                 Header(scrollState, person)
             }

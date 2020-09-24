@@ -2,9 +2,11 @@ package com.chebdowski.resume.core.di
 
 import com.chebdowski.resume.features.resume.PersonApi
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 val networkModule = module {
     single { provideOkHttpClient() }
@@ -12,11 +14,16 @@ val networkModule = module {
     single { provideRetrofit(get()) }
 }
 
-fun provideOkHttpClient() = OkHttpClient.Builder().build()
+fun provideOkHttpClient(): OkHttpClient {
+    val interceptor = HttpLoggingInterceptor()
+    interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+
+    return OkHttpClient.Builder().addInterceptor(interceptor).build()
+}
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
     Retrofit.Builder()
-        .baseUrl("https://gist.github.com/S-ido/")
+        .baseUrl("https://gist.githubusercontent.com/S-ido/")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
