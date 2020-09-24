@@ -43,8 +43,6 @@ class ResumeFragment : BaseFragment() {
 
     @Composable
     fun HandlePerson(person: Person?) {
-        println("handle Person")
-
         val scrollState = rememberScrollState()
 
         ScrollableColumn(
@@ -52,7 +50,7 @@ class ResumeFragment : BaseFragment() {
             scrollState = scrollState
         ) {
             if (person == null) {
-                println("Null person data")
+                //TODO Handle null person data
             } else {
                 Header(scrollState, person)
             }
@@ -75,7 +73,6 @@ class ResumeFragment : BaseFragment() {
 
     @Composable
     fun HandleFailure(failure: Failure?) {
-        println("handle Failure")
         when (failure) {
             is Failure.ServerError -> notify(getString(R.string.failure_server_error))
         }
