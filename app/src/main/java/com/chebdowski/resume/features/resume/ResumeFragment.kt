@@ -8,6 +8,7 @@ import androidx.compose.ui.platform.ComposeView
 import com.chebdowski.resume.core.extension.failureAsState
 import com.chebdowski.resume.core.extension.observeAsState
 import com.chebdowski.resume.core.platform.BaseFragment
+import com.chebdowski.resume.core.ui.ResumeTheme
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class ResumeFragment : BaseFragment() {
@@ -17,8 +18,10 @@ class ResumeFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return ComposeView(context = requireContext()).apply {
             setContent {
-                HandlePerson(observeAsState(viewModel.person))
-                HandleFailure(failureAsState(viewModel.failure), context)
+                ResumeTheme {
+                    HandlePerson(observeAsState(viewModel.person))
+                    HandleFailure(failureAsState(viewModel.failure), context)
+                }
             }
         }
     }
