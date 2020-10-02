@@ -1,10 +1,10 @@
 package com.chebdowski.resume.core.networking
 
-import com.chebdowski.resume.core.exception.Failure
-import com.chebdowski.resume.core.exception.Failure.ServerError
-import com.chebdowski.resume.core.functional.Either
-import com.chebdowski.resume.core.functional.Either.Left
-import com.chebdowski.resume.core.functional.Either.Right
+import com.chebdowski.core.exception.Failure
+import com.chebdowski.core.exception.Failure.ServerError
+import com.chebdowski.core.functional.Either
+import com.chebdowski.core.functional.Either.Left
+import com.chebdowski.core.functional.Either.Right
 import retrofit2.Call
 
 abstract class BaseRemoteRepository {

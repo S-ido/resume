@@ -1,7 +1,7 @@
 package com.chebdowski.resume.features.resume
 
-import com.chebdowski.resume.core.exception.Failure
-import com.chebdowski.resume.core.functional.Either
+import com.chebdowski.core.exception.Failure
+import com.chebdowski.core.functional.Either
 import com.chebdowski.resume.core.networking.BaseRemoteRepository
 
 interface PersonRepository {

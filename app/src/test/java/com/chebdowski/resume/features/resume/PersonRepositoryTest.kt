@@ -1,10 +1,10 @@
 package com.chebdowski.resume.features.resume
 
 import android.accounts.NetworkErrorException
-import com.chebdowski.resume.UnitTest
-import com.chebdowski.resume.core.exception.Failure.ServerError
-import com.chebdowski.resume.core.functional.Either
-import com.chebdowski.resume.core.functional.Either.Right
+import com.chebdowski.core.UnitTest
+import com.chebdowski.core.exception.Failure.ServerError
+import com.chebdowski.core.functional.Either
+import com.chebdowski.core.functional.Either.Right
 import org.amshove.kluent.`should be equal to`
 import org.amshove.kluent.`should be instance of`
 import org.amshove.kluent.`should be`
@@ -84,6 +84,6 @@ class PersonRepositoryTest : UnitTest() {
         person.either({ failure -> failure `should be instance of` ServerError::class.java }, { /** ignore right **/ })
     }
 
-    private fun getMockedPerson() = Person("Piotr", "Mocked")
-    private fun getMockedPersonEntity() = PersonEntity("Piotr", "Mocked")
+    private fun getMockedPerson() = Person("", "Piotr", "Mocked", "", "", "")
+    private fun getMockedPersonEntity() = PersonEntity("", "Piotr", "Mocked", "", "", "")
 }

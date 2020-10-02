@@ -16,7 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.chebdowski.resume.R
-import com.chebdowski.resume.core.exception.Failure
+import com.chebdowski.core.exception.Failure
 import com.chebdowski.resume.core.ui.baselineHeight
 import dev.chrisbanes.accompanist.coil.CoilImage
 import java.util.*

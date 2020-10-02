@@ -1,4 +1,4 @@
-package com.chebdowski.resume.core.exception
+package com.chebdowski.core.exception
 
 /**
  * Base class for error handling.

@@ -1,14 +1,14 @@
-package com.chebdowski.resume.core.functional
+package com.chebdowski.core.functional
 
-import com.chebdowski.resume.UnitTest
-import com.chebdowski.resume.core.functional.Either.Left
-import com.chebdowski.resume.core.functional.Either.Right
+import com.chebdowski.core.UnitTest
+import com.chebdowski.core.functional.Either.Left
+import com.chebdowski.core.functional.Either.Right
 import org.amshove.kluent.`should be equal to`
 import org.amshove.kluent.`should be instance of`
 import org.amshove.kluent.`should be`
 import org.junit.Test
 
-class EitherTest : UnitTest() {
+class EitherTest: UnitTest() {
 
     @Test
     fun `Left should return correct type`() {
@@ -19,11 +19,11 @@ class EitherTest : UnitTest() {
         result.isRight `should be` false
 
         result.either(
-            { left ->
-                left `should be instance of` String::class.java
-                left `should be equal to` "left"
+                { left ->
+                        left `should be instance of` String::class.java
+        left `should be equal to` "left"
             },
-            { /** ignore right **/ })
+        { /** ignore right **/ })
     }
 
     @Test
@@ -35,10 +35,10 @@ class EitherTest : UnitTest() {
         result.isLeft `should be` false
 
         result.either(
-            { /** ignore left **/ },
-            { right ->
-                right `should be instance of` String::class.java
-                right `should be equal to` "right"
+                { /** ignore left **/ },
+                { right ->
+                        right `should be instance of` String::class.java
+        right `should be equal to` "right"
             })
     }
 }

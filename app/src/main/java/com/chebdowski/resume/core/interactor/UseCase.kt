@@ -1,7 +1,7 @@
 package com.chebdowski.resume.core.interactor
 
-import com.chebdowski.resume.core.exception.Failure
-import com.chebdowski.resume.core.functional.Either
+import com.chebdowski.core.functional.Either
+import com.chebdowski.core.exception.Failure
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async

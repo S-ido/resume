@@ -1,4 +1,4 @@
-package com.chebdowski.resume.core.functional
+package com.chebdowski.core.functional
 
 sealed class Either<out L, out R> {
 

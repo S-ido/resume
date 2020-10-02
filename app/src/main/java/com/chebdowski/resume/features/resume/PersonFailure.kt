@@ -1,6 +1,6 @@
 package com.chebdowski.resume.features.resume
 
-import com.chebdowski.resume.core.exception.Failure
+import com.chebdowski.core.exception.Failure
 
 class PersonFailure {
 

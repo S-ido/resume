@@ -1,7 +1,7 @@
 package com.chebdowski.resume.features.resume
 
-import com.chebdowski.resume.UnitTest
-import com.chebdowski.resume.core.functional.Either
+import com.chebdowski.core.UnitTest
+import com.chebdowski.core.functional.Either
 import com.chebdowski.resume.core.interactor.UseCase.None
 import kotlinx.coroutines.runBlocking
 import org.junit.Before

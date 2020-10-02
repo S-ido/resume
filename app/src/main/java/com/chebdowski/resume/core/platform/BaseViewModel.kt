@@ -3,7 +3,7 @@ package com.chebdowski.resume.core.platform
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.chebdowski.resume.core.exception.Failure
+import com.chebdowski.core.exception.Failure
 import org.koin.core.KoinComponent
 
 /**

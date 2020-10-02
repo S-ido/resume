@@ -1,4 +1,4 @@
-package com.chebdowski.resume
+package com.chebdowski.core
 
 import org.junit.Rule
 import org.junit.runner.RunWith

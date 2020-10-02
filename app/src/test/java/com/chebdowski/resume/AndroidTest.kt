@@ -1,6 +1,7 @@
 package com.chebdowski.resume
 
 import android.app.Application
+import com.chebdowski.core.InjectMocksRule
 import org.junit.Rule
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
