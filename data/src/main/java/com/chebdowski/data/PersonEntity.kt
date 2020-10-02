@@ -1,4 +1,6 @@
-package com.chebdowski.resume.features.resume
+package com.chebdowski.data
+
+import com.chebdowski.domain.person.Person
 
 data class PersonEntity(
     private val pictureUrl: String,

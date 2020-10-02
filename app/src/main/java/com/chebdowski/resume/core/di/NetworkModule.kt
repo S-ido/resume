@@ -1,6 +1,6 @@
 package com.chebdowski.resume.core.di
 
-import com.chebdowski.resume.features.resume.PersonApi
+import com.chebdowski.data.PersonApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

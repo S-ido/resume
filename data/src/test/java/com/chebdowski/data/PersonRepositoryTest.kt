@@ -1,10 +1,9 @@
-package com.chebdowski.resume.features.resume
+package com.chebdowski.data
 
-import android.accounts.NetworkErrorException
-import com.chebdowski.core.UnitTest
 import com.chebdowski.core.exception.Failure.ServerError
 import com.chebdowski.core.functional.Either
 import com.chebdowski.core.functional.Either.Right
+import com.chebdowski.domain.person.Person
 import org.amshove.kluent.`should be equal to`
 import org.amshove.kluent.`should be instance of`
 import org.amshove.kluent.`should be`
@@ -15,9 +14,10 @@ import org.mockito.Mock
 import org.mockito.Mockito.verify
 import retrofit2.Call
 import retrofit2.Response
+import java.lang.Exception
 
 class PersonRepositoryTest : UnitTest() {
-    private lateinit var personRepository: PersonRepository.RemotePersonRepository
+    private lateinit var personRepository: RemotePersonRepository
 
     @Mock
     private lateinit var api: PersonApi
@@ -30,7 +30,7 @@ class PersonRepositoryTest : UnitTest() {
 
     @Before
     fun setup() {
-        personRepository = PersonRepository.RemotePersonRepository(api)
+        personRepository = RemotePersonRepository(api)
     }
 
     @Test
@@ -74,7 +74,7 @@ class PersonRepositoryTest : UnitTest() {
 
     @Test
     fun `repository should catch exceptions`() {
-        given(personCall.execute()).willAnswer { throw NetworkErrorException() }
+        given(personCall.execute()).willAnswer { throw Exception() }
         given(api.person()).willReturn(personCall)
 
         val person = personRepository.person()

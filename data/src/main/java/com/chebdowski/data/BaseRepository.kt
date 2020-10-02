@@ -1,4 +1,4 @@
-package com.chebdowski.resume.core.networking
+package com.chebdowski.data
 
 import com.chebdowski.core.exception.Failure
 import com.chebdowski.core.exception.Failure.ServerError
@@ -7,7 +7,7 @@ import com.chebdowski.core.functional.Either.Left
 import com.chebdowski.core.functional.Either.Right
 import retrofit2.Call
 
-abstract class BaseRemoteRepository {
+abstract class BaseRepository {
 
     protected fun <T, R> request(call: Call<T>, transform: (T) -> R, default: T): Either<Failure, R> {
         return try {

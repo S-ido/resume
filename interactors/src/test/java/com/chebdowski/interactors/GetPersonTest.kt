@@ -1,6 +1,5 @@
 package com.chebdowski.interactors
 
-import com.chebdowski.core.UnitTest
 import com.chebdowski.core.functional.Either
 import com.chebdowski.domain.person.Person
 import com.chebdowski.domain.person.PersonRepository
