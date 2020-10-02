@@ -1,4 +1,4 @@
-package com.chebdowski.resume.features.resume
+package com.chebdowski.domain.person
 
 data class Person(
     val pictureUrl: String,

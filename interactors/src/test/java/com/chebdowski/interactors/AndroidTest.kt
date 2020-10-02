@@ -1,4 +1,4 @@
-package com.chebdowski.resume
+package com.chebdowski.interactors
 
 import android.app.Application
 import com.chebdowski.core.InjectMocksRule

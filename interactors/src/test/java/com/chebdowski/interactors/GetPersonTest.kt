@@ -1,12 +1,15 @@
-package com.chebdowski.resume.features.resume
+package com.chebdowski.interactors
 
 import com.chebdowski.core.UnitTest
 import com.chebdowski.core.functional.Either
-import com.chebdowski.resume.core.interactor.UseCase.None
+import com.chebdowski.domain.person.Person
+import com.chebdowski.domain.person.PersonRepository
+import com.chebdowski.interactors.UseCase.None
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
-import org.mockito.BDDMockito.*
+import org.mockito.BDDMockito.given
+import org.mockito.BDDMockito.verifyNoMoreInteractions
 import org.mockito.Mock
 import org.mockito.Mockito
 

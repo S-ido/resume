@@ -1,7 +1,6 @@
-package com.chebdowski.resume.core.interactor
+package com.chebdowski.interactors
 
-import com.chebdowski.resume.AndroidTest
-import com.chebdowski.resume.core.exception.Failure
+import com.chebdowski.core.exception.Failure
 import com.chebdowski.core.functional.Either
 import com.chebdowski.core.functional.Either.Right
 import kotlinx.coroutines.Dispatchers

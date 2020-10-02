@@ -1,3 +1,6 @@
 include ':app'
 rootProject.name = "resume"
 include ':core'
+include ':domain'
+include ':interactors'
+include ':interactors'

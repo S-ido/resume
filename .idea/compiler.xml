@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
       <module name="resume.app" target="14" />
+      <module name="resume.interactors" target="14" />
     </bytecodeTargetLevel>
   </component>
 </project>
