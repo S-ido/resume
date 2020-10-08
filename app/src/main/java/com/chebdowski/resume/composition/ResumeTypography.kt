@@ -40,6 +40,16 @@ val resumeTypography = Typography(
         fontSize = 20.sp,
         letterSpacing = 3.sp
     ),
+    h3 = TextStyle(
+        fontFamily = WorkSansFontFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 24.sp,
+        letterSpacing = 3.sp
+    ),
+    h4 = TextStyle(
+        fontFamily = NunitoSansFontFamily,
+        fontSize = 14.sp
+    ),
     body1 = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp

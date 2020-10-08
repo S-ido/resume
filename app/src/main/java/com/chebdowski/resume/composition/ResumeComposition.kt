@@ -1,12 +1,8 @@
 package com.chebdowski.resume.composition
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.Text
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -22,13 +18,7 @@ import java.util.*
 val baseHorizontalPadding = 40.dp
 
 @Composable
-fun ComposeResume(
-    person: Person,
-    @DrawableRes phoneImageId: Int,
-    @DrawableRes emailImageId: Int,
-    @DrawableRes linkedinImageId: Int,
-    @DrawableRes locationImageId: Int
-) {
+fun ComposeResume(person: Person) {
     val scrollState = rememberScrollState()
 
     ScrollableColumn(
@@ -37,7 +27,9 @@ fun ComposeResume(
     ) {
         Header(person)
         ProfessionalSummary(person)
-        ContactInfo(person, phoneImageId, emailImageId, linkedinImageId, locationImageId)
+        ContactInfo(person)
+        WorkExperience(person)
+        Spacer(Modifier.padding(bottom = 16.dp))
     }
 }
 

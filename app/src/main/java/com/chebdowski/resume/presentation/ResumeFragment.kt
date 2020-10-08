@@ -42,7 +42,7 @@ class ResumeFragment : BaseFragment() {
     @Composable
     private fun HandlePerson(person: Person?, context: Context) {
         if (person != null) {
-            ComposeResume(person, R.drawable.ic_phone, R.drawable.ic_email, R.drawable.ic_linkedin, R.drawable.ic_location)
+            ComposeResume(person)
         } else {
             HandleFailure(PersonFailure.PersonNotAvailable(), context)
         }

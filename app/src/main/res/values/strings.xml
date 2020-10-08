@@ -4,4 +4,6 @@
     <string name="failure_general_error">General Error</string>
     <string name="failure_server_error">Server Error</string>
     <string name="failure_person_not_available">Couldn\'t fetch person data. Please try again.</string>
+
+    <string name="section_work_experience">Work Experience</string>
 </resources>

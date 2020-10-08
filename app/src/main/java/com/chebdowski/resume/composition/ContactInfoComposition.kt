@@ -11,22 +11,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.unit.dp
 import com.chebdowski.domain.person.Person
+import com.chebdowski.resume.R
 
 @Composable
 fun ContactInfo(
-    person: Person,
-    @DrawableRes phoneImageId: Int,
-    @DrawableRes emailImageId: Int,
-    @DrawableRes linkedinImageId: Int,
-    @DrawableRes locationImageId: Int
+    person: Person
 ) {
-    ContactRow(person.phone, phoneImageId)
-    ContactSpacer()
-    ContactRow(person.email, emailImageId)
-    ContactSpacer()
-    ContactRow(person.linkedIn, linkedinImageId)
-    ContactSpacer()
-    ContactRow(person.location, locationImageId)
+    ContactRow(person.phone, R.drawable.ic_phone)
+    Spacer16()
+    ContactRow(person.email, R.drawable.ic_email)
+    Spacer16()
+    ContactRow(person.linkedIn, R.drawable.ic_linkedin)
+    Spacer16()
+    ContactRow(person.location, R.drawable.ic_location)
 
     SectionDivider()
 }
@@ -53,9 +50,4 @@ private fun ContactRow(info: String, @DrawableRes imageId: Int) {
             style = MaterialTheme.typography.body1,
         )
     }
-}
-
-@Composable
-private fun ContactSpacer() {
-    Spacer(modifier = Modifier.preferredHeight(16.dp))
 }
