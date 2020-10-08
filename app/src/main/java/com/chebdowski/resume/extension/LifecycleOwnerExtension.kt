@@ -1,4 +1,4 @@
-package com.chebdowski.resume.core.extension
+package com.chebdowski.resume.extension
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState

@@ -1,10 +1,10 @@
-package com.chebdowski.resume.core.platform
+package com.chebdowski.resume.platform
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.chebdowski.resume.R.id
 import com.chebdowski.resume.R.layout
-import com.chebdowski.resume.core.extension.inTransaction
+import com.chebdowski.resume.extension.inTransaction
 
 abstract class BaseActivity : AppCompatActivity() {
 

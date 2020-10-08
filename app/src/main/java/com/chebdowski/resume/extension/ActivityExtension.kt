@@ -1,4 +1,4 @@
-package com.chebdowski.resume.core.extension
+package com.chebdowski.resume.extension
 
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction

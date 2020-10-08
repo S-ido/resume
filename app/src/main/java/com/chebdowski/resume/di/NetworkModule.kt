@@ -1,4 +1,4 @@
-package com.chebdowski.resume.core.di
+package com.chebdowski.resume.di
 
 import com.chebdowski.data.PersonApi
 import okhttp3.OkHttpClient

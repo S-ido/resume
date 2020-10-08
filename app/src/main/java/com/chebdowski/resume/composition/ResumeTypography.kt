@@ -1,4 +1,4 @@
-package com.chebdowski.resume.core.ui
+package com.chebdowski.resume.composition
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

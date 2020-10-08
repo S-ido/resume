@@ -1,4 +1,4 @@
-package com.chebdowski.resume.features.resume
+package com.chebdowski.resume.presentation
 
 import com.chebdowski.core.exception.Failure
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.chebdowski.resume.core.ui;
+package com.chebdowski.resume.composition;
 
 import androidx.compose.foundation.text.FirstBaseline
 import androidx.compose.foundation.text.LastBaseline

@@ -6,10 +6,17 @@ data class Person(
     val lastName: String,
     val position: String,
     val secondPosition: String,
-    val professionalSummary: String
+    val professionalSummary: String,
+    val phone: String,
+    val email: String,
+    val linkedIn: String,
+    val location: String
 ) {
 
     companion object {
-        fun empty() = Person("", "", "", "", "", "")
+        fun empty() = Person(
+            "", "", "", "", "",
+            "", "", "", "", ""
+        )
     }
 }

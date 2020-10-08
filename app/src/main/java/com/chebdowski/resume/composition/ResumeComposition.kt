@@ -1,50 +1,43 @@
-package com.chebdowski.resume.features.resume
+package com.chebdowski.resume.composition
 
-import android.content.Context
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.Text
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Snackbar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.chebdowski.resume.R
-import com.chebdowski.core.exception.Failure
 import com.chebdowski.domain.person.Person
-import com.chebdowski.resume.core.ui.baselineHeight
 import dev.chrisbanes.accompanist.coil.CoilImage
 import java.util.*
 
+val baseHorizontalPadding = 40.dp
+
 @Composable
-fun HandlePerson(person: Person?) {
+fun ComposeResume(
+    person: Person,
+    @DrawableRes phoneImageId: Int,
+    @DrawableRes emailImageId: Int,
+    @DrawableRes linkedinImageId: Int,
+    @DrawableRes locationImageId: Int
+) {
     val scrollState = rememberScrollState()
 
     ScrollableColumn(
         modifier = Modifier.fillMaxSize(),
         scrollState = scrollState
     ) {
-        if (person == null) {
-            //TODO Handle null person data
-        } else {
-            Header(person)
-            SectionDivider()
-            ProfessionalSummary(person)
-            SectionDivider()
-        }
-    }
-}
-
-@Composable
-fun HandleFailure(failure: Failure?, context: Context) {
-    when (failure) {
-        is Failure.ServerError -> notify(context.getString(R.string.failure_server_error))
+        Header(person)
+        ProfessionalSummary(person)
+        ContactInfo(person, phoneImageId, emailImageId, linkedinImageId, locationImageId)
     }
 }
 
@@ -52,6 +45,7 @@ fun HandleFailure(failure: Failure?, context: Context) {
 private fun Header(person: Person) {
     Picture(person)
     NameAndPosition(person)
+    SectionDivider()
 }
 
 @Composable
@@ -137,28 +131,11 @@ private fun ProfessionalSummary(person: Person) {
         text = person.professionalSummary,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 40.dp)
+            .padding(horizontal = baseHorizontalPadding)
             .baselineHeight(24.dp),
         style = MaterialTheme.typography.body1,
         textAlign = TextAlign.Center
     )
-}
 
-@Composable
-private fun SectionDivider() {
-    Divider(
-        modifier = Modifier
-            .padding(vertical = 32.dp, horizontal = 96.dp)
-            .preferredHeight(8.dp)
-            .background(MaterialTheme.colors.primary)
-    )
-}
-
-@Composable
-private fun notify(message: String) {
-    Column {
-        Snackbar(
-            text = { Text(text = message) }
-        )
-    }
+    SectionDivider()
 }

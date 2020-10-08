@@ -1,4 +1,4 @@
-package com.chebdowski.resume.core.platform
+package com.chebdowski.resume.platform
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

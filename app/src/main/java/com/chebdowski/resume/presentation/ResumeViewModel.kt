@@ -1,11 +1,11 @@
-package com.chebdowski.resume.features.resume
+package com.chebdowski.resume.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.chebdowski.domain.person.Person
 import com.chebdowski.interactors.GetPerson
 import com.chebdowski.interactors.UseCase
-import com.chebdowski.resume.core.platform.BaseViewModel
+import com.chebdowski.resume.platform.BaseViewModel
 import org.koin.core.inject
 
 class ResumeViewModel : BaseViewModel() {

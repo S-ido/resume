@@ -1,8 +1,8 @@
 package com.chebdowski.resume
 
 import android.app.Application
-import com.chebdowski.resume.core.di.applicationModule
-import com.chebdowski.resume.core.di.networkModule
+import com.chebdowski.resume.di.applicationModule
+import com.chebdowski.resume.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
