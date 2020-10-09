@@ -10,7 +10,6 @@ Native Android application made with Kotlin and Jetpack Compose
 * Dependency Injection with Koin
 * Retrofit
 
-![cp-app-screen1](https://user-images.githubusercontent.com/1894882/95612790-3e1c9500-0a64-11eb-8a9a-4b7c3a422d9c.png)
-![cv-app-screen2](https://user-images.githubusercontent.com/1894882/95613016-8fc51f80-0a64-11eb-98c4-0097354f82d9.png)
+![cp-app-screen1](https://user-images.githubusercontent.com/1894882/95612790-3e1c9500-0a64-11eb-8a9a-4b7c3a422d9c.png) ![cv-app-screen2](https://user-images.githubusercontent.com/1894882/95613016-8fc51f80-0a64-11eb-98c4-0097354f82d9.png)
 
 <img src="https://user-images.githubusercontent.com/1894882/95612790-3e1c9500-0a64-11eb-8a9a-4b7c3a422d9c.png" width="300"/> <img src="https://user-images.githubusercontent.com/1894882/95613016-8fc51f80-0a64-11eb-98c4-0097354f82d9.png" width="300"/>
