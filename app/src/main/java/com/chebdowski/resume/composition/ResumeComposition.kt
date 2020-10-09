@@ -30,6 +30,7 @@ fun ComposeResume(person: Person) {
         ContactInfo(person)
         WorkExperience(person.workExperience)
         Education(person.education)
+        Skills(person.skills)
         Spacer(Modifier.padding(bottom = 16.dp))
     }
 }

@@ -42,7 +42,7 @@ private fun Degree(degree: String) {
 
 @Composable
 private fun School(school: String) {
-    CommonText(school)
+    CommonText(school, Modifier.baselineHeight(18.dp))
 }
 
 @Composable
