@@ -1,10 +1,10 @@
 package com.chebdowski.resume.composition
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -17,7 +17,7 @@ import java.util.*
 
 @Composable
 fun WorkExperience(person: Person) {
-    SectionName()
+    SectionName(R.string.section_work_experience)
     Spacer32()
     Column(
         modifier = Modifier
@@ -25,21 +25,8 @@ fun WorkExperience(person: Person) {
             .padding(horizontal = 16.dp)
     ) {
         ExperienceList(person.workExperience)
+        SectionDivider()
     }
-}
-
-@Composable
-private fun SectionName() {
-    val sectionName = stringResource(R.string.section_work_experience)
-
-    Text(
-        text = sectionName.toUpperCase(Locale.getDefault()),
-        modifier = Modifier
-            .fillMaxWidth()
-            .baselineHeight(24.dp),
-        style = MaterialTheme.typography.h2,
-        textAlign = TextAlign.Center
-    )
 }
 
 @Composable
@@ -49,6 +36,7 @@ private fun ExperienceList(workExperience: WorkExperience) {
         CompanyAndDate(work.company, work.date)
         Spacer16()
         ResponsibilitiesComposition(work.responsibilities)
+        Spacer32()
     }
 }
 
@@ -65,23 +53,24 @@ private fun Position(position: String) {
 
 @Composable
 private fun CompanyAndDate(company: String, date: String) {
-    CommonText("$company / $date")
+    CommonText("$company / $date", Modifier.baselineHeight(18.dp))
 }
 
 @Composable
-private fun ResponsibilitiesComposition(responsibilities: Responsibilities) {
-    CommonText("${responsibilities.responsibility}:")
-    responsibilities.achievements.forEach { achievement ->
-        Achievement(achievement)
+private fun ResponsibilitiesComposition(responsibilities: List<Responsibilities>) {
+    responsibilities.forEach {
+        CommonText("${it.responsibility}:")
+        it.achievements.forEach { achievement ->
+            Achievement(achievement)
+        }
     }
 }
 
 @Composable
 private fun Achievement(achievement: String) {
     Row(
-//        modifier = Modifier.fillMaxWidth(),
-//        horizontalArrangement = Arrangement.Start,
-//        verticalAlignment = Alignment.CenterVertically
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.Start,
     ) {
         Bullet()
         CommonText(achievement)
@@ -93,7 +82,6 @@ private fun Bullet() {
     Text(
         text = "•",
         modifier = Modifier
-            .baselineHeight(24.dp)
             .padding(horizontal = 16.dp)
             .preferredWidth(16.dp),
         style = MaterialTheme.typography.body1
@@ -101,10 +89,10 @@ private fun Bullet() {
 }
 
 @Composable
-private fun CommonText(text: String) {
+private fun CommonText(text: String, modifier: Modifier = Modifier) {
     Text(
         text = text,
-        modifier = Modifier.baselineHeight(24.dp),
-        style = MaterialTheme.typography.body1
+        style = MaterialTheme.typography.body1,
+        modifier = modifier
     )
 }

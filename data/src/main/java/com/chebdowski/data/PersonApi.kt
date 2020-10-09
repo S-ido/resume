@@ -6,7 +6,7 @@ import retrofit2.http.GET
 interface PersonApi {
 
     companion object {
-        private const val PERSON = "2489eb2d780e02b74061551b7441567bf6aafdbc/person"
+        private const val PERSON = "person"
     }
 
     @GET(PERSON)

@@ -48,6 +48,7 @@ val resumeTypography = Typography(
     ),
     h4 = TextStyle(
         fontFamily = NunitoSansFontFamily,
+        fontWeight = FontWeight.ExtraBold,
         fontSize = 14.sp
     ),
     body1 = TextStyle(
