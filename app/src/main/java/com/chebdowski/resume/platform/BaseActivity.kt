@@ -2,6 +2,8 @@ package com.chebdowski.resume.platform
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import com.chebdowski.resume.R.id
 import com.chebdowski.resume.R.layout
 import com.chebdowski.resume.extension.inTransaction
