@@ -6,4 +6,5 @@
     <string name="failure_person_not_available">Couldn\'t fetch person data. Please try again.</string>
 
     <string name="section_work_experience">Work Experience</string>
+    <string name="section_education">Education</string>
 </resources>

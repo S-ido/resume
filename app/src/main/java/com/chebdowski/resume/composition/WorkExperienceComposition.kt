@@ -1,13 +1,10 @@
 package com.chebdowski.resume.composition
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.chebdowski.domain.person.Person
 import com.chebdowski.domain.person.Responsibilities
@@ -16,7 +13,7 @@ import com.chebdowski.resume.R
 import java.util.*
 
 @Composable
-fun WorkExperience(person: Person) {
+fun WorkExperience(workExperience: WorkExperience) {
     SectionName(R.string.section_work_experience)
     Spacer32()
     Column(
@@ -24,7 +21,7 @@ fun WorkExperience(person: Person) {
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
     ) {
-        ExperienceList(person.workExperience)
+        ExperienceList(workExperience)
         SectionDivider()
     }
 }
@@ -85,14 +82,5 @@ private fun Bullet() {
             .padding(horizontal = 16.dp)
             .preferredWidth(16.dp),
         style = MaterialTheme.typography.body1
-    )
-}
-
-@Composable
-private fun CommonText(text: String, modifier: Modifier = Modifier) {
-    Text(
-        text = text,
-        style = MaterialTheme.typography.body1,
-        modifier = modifier
     )
 }

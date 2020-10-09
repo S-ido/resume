@@ -11,13 +11,16 @@ data class Person(
     val email: String,
     val linkedIn: String,
     val location: String,
-    val workExperience: WorkExperience
+    val workExperience: WorkExperience,
+    val education: Education,
+    val skills: Skills
 ) {
 
     companion object {
         fun empty() = Person(
             "", "", "", "", "",
-            "", "", "", "", "", WorkExperience.empty()
+            "", "", "", "", "", WorkExperience.empty(),
+            Education.empty(), Skills.empty()
         )
     }
 }

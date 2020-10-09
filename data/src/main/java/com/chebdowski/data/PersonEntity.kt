@@ -13,18 +13,22 @@ data class PersonEntity(
     private val email: String,
     private val linkedIn: String,
     private val location: String,
-    private val workExperience: WorkExperienceEntity
+    private val workExperience: WorkExperienceEntity,
+    private val education: EducationEntity,
+    private val skills: SkillsEntity
 ) {
 
     companion object {
         fun empty() = PersonEntity(
             "", "", "", "", "",
-            "", "", "", "", "", WorkExperienceEntity.empty()
+            "", "", "", "", "", WorkExperienceEntity.empty(),
+            EducationEntity.empty(), SkillsEntity.empty()
         )
     }
 
     fun toPerson() = Person(
         pictureUrl, firstName, lastName, position, position2,
-        professionalSummary, phone, email, linkedIn, location, workExperience.toWorkExperience()
+        professionalSummary, phone, email, linkedIn, location, workExperience.toWorkExperience(),
+        education.toEducation(), skills.toSkills()
     )
 }

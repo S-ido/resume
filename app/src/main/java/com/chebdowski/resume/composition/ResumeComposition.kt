@@ -26,24 +26,25 @@ fun ComposeResume(person: Person) {
         scrollState = scrollState
     ) {
         Header(person)
-        ProfessionalSummary(person)
+        ProfessionalSummary(person.professionalSummary)
         ContactInfo(person)
-        WorkExperience(person)
+        WorkExperience(person.workExperience)
+        Education(person.education)
         Spacer(Modifier.padding(bottom = 16.dp))
     }
 }
 
 @Composable
 private fun Header(person: Person) {
-    Picture(person)
+    Picture(person.pictureUrl)
     NameAndPosition(person)
     SectionDivider()
 }
 
 @Composable
-private fun Picture(person: Person) {
+private fun Picture(pictureUrl: String) {
     CoilImage(
-        data = person.pictureUrl,
+        data = pictureUrl,
         modifier = Modifier
             .fillMaxSize()
             .padding(top = 16.dp)
@@ -60,17 +61,17 @@ private fun NameAndPosition(person: Person) {
             .padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        FirstName(person)
-        LastName(person)
-        Position(person)
-        if (person.secondPosition.isNotEmpty()) SecondPosition(person)
+        FirstName(person.firstName)
+        LastName(person.lastName)
+        Position(person.position)
+        if (person.secondPosition.isNotEmpty()) SecondPosition(person.secondPosition)
     }
 }
 
 @Composable
-private fun FirstName(person: Person) {
+private fun FirstName(firstName: String) {
     Text(
-        text = person.firstName,
+        text = firstName,
         modifier = Modifier
             .fillMaxWidth()
             .baselineHeight(64.dp),
@@ -80,9 +81,9 @@ private fun FirstName(person: Person) {
 }
 
 @Composable
-private fun LastName(person: Person) {
+private fun LastName(lastName: String) {
     Text(
-        text = person.lastName,
+        text = lastName,
         modifier = Modifier
             .fillMaxWidth()
             .baselineHeight(52.dp),
@@ -92,9 +93,9 @@ private fun LastName(person: Person) {
 }
 
 @Composable
-private fun Position(person: Person) {
+private fun Position(position: String) {
     Text(
-        text = person.position.toUpperCase(Locale.getDefault()),
+        text = position.toUpperCase(Locale.getDefault()),
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 42.dp)
@@ -105,9 +106,9 @@ private fun Position(person: Person) {
 }
 
 @Composable
-private fun SecondPosition(person: Person) {
+private fun SecondPosition(secondPosition: String) {
     Text(
-        text = person.secondPosition.toUpperCase(Locale.getDefault()),
+        text = secondPosition.toUpperCase(Locale.getDefault()),
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 8.dp)
@@ -118,9 +119,9 @@ private fun SecondPosition(person: Person) {
 }
 
 @Composable
-private fun ProfessionalSummary(person: Person) {
+private fun ProfessionalSummary(professionalSummary: String) {
     Text(
-        text = person.professionalSummary,
+        text = professionalSummary,
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = baseHorizontalPadding)

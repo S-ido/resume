@@ -39,6 +39,15 @@ fun SectionDivider() {
 }
 
 @Composable
+fun CommonText(text: String, modifier: Modifier = Modifier) {
+    Text(
+        text = text,
+        style = MaterialTheme.typography.body1,
+        modifier = modifier
+    )
+}
+
+@Composable
 fun notify(message: String) {
     Column {
         Snackbar(
