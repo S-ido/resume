@@ -11,6 +11,7 @@ import com.chebdowski.core.exception.Failure
 import com.chebdowski.domain.person.Person
 import com.chebdowski.resume.R
 import com.chebdowski.resume.composition.ComposeResume
+import com.chebdowski.resume.composition.Loading
 import com.chebdowski.resume.composition.ResumeTheme
 import com.chebdowski.resume.composition.notify
 import com.chebdowski.resume.extension.failureAsState
@@ -26,7 +27,7 @@ class ResumeFragment : BaseFragment() {
         return ComposeView(context = requireContext()).apply {
             setContent {
                 ResumeTheme {
-                    HandlePerson(observeAsState(viewModel.person), context)
+                    HandlePerson(observeAsState(viewModel.person))
                     HandleFailure(failureAsState(viewModel.failure), context)
                 }
             }
@@ -40,11 +41,12 @@ class ResumeFragment : BaseFragment() {
     }
 
     @Composable
-    private fun HandlePerson(person: Person?, context: Context) {
+    private fun HandlePerson(person: Person?) {
         if (person != null) {
-            ComposeResume(person)
+            Loading()
+//            ComposeResume(person)
         } else {
-            HandleFailure(PersonFailure.PersonNotAvailable(), context)
+            Loading()
         }
     }
 

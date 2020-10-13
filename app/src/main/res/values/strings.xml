@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">resume</string>
+    <string name="app_name">CV App</string>
 
     <string name="failure_general_error">General Error</string>
     <string name="failure_server_error">Server Error</string>
