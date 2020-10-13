@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">CV App</string>
 
-    <string name="failure_general_error">General Error</string>
+    <string name="failure_bad_request">Bad Request</string>
+    <string name="failure_unauthorized">Unauthorized</string>
+    <string name="failure_forbidden">Forbidden</string>
+    <string name="failure_not_found">Not Found</string>
+    <string name="failure_request_timeout">Request Timeout</string>
+    <string name="failure_request">Request Error</string>
     <string name="failure_server_error">Server Error</string>
+    <string name="failure_unhandled_request">Unhandled error (%1$d)</string>
+
+    <string name="failure_general_error">General Error</string>
+
     <string name="failure_person_not_available">Couldn\'t fetch person data. Please try again.</string>
 
     <string name="section_work_experience">Work Experience</string>

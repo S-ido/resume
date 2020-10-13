@@ -2,9 +2,11 @@ package com.chebdowski.resume.composition
 
 import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.Text
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,17 +23,19 @@ val baseHorizontalPadding = 40.dp
 fun ComposeResume(person: Person) {
     val scrollState = rememberScrollState()
 
-    ScrollableColumn(
-        modifier = Modifier.fillMaxSize(),
-        scrollState = scrollState
-    ) {
-        Header(person)
-        ProfessionalSummary(person.professionalSummary)
-        ContactInfo(person)
-        WorkExperience(person.workExperience)
-        Education(person.education)
-        Skills(person.skills)
-        Spacer(Modifier.padding(bottom = 16.dp))
+    Surface {
+        ScrollableColumn(
+            modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.background),
+            scrollState = scrollState
+        ) {
+            Header(person)
+            ProfessionalSummary(person.professionalSummary)
+            ContactInfo(person)
+            WorkExperience(person.workExperience)
+            Education(person.education)
+            Skills(person.skills)
+            Spacer(Modifier.padding(bottom = 16.dp))
+        }
     }
 }
 

@@ -3,7 +3,10 @@ package com.chebdowski.data
 import com.chebdowski.core.exception.Failure.ServerError
 import com.chebdowski.core.functional.Either
 import com.chebdowski.core.functional.Either.Right
+import com.chebdowski.domain.person.Education
 import com.chebdowski.domain.person.Person
+import com.chebdowski.domain.person.Skills
+import com.chebdowski.domain.person.WorkExperience
 import org.amshove.kluent.`should be equal to`
 import org.amshove.kluent.`should be instance of`
 import org.amshove.kluent.`should be`
@@ -84,6 +87,14 @@ class PersonRepositoryTest : UnitTest() {
         person.either({ failure -> failure `should be instance of` ServerError::class.java }, { /** ignore right **/ })
     }
 
-    private fun getMockedPerson() = Person("", "Piotr", "Mocked", "", "", "")
-    private fun getMockedPersonEntity() = PersonEntity("", "Piotr", "Mocked", "", "", "")
+    private fun getMockedPerson() = Person(
+        "", "Piotr", "Test", "", "",
+        "", "", "", "", "", WorkExperience.empty(),
+        Education.empty(), Skills.empty()
+    )
+    private fun getMockedPersonEntity() = PersonEntity(
+        "", "Piotr", "Test", "", "",
+        "", "", "", "", "", WorkExperienceEntity.empty(),
+        EducationEntity.empty(), SkillsEntity.empty()
+    )
 }

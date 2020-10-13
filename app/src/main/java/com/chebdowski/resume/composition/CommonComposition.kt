@@ -37,7 +37,7 @@ fun SectionDivider() {
         modifier = Modifier
             .padding(vertical = 32.dp, horizontal = 96.dp)
             .preferredHeight(8.dp)
-            .background(MaterialTheme.colors.primary)
+            .background(MaterialTheme.colors.secondary)
     )
 }
 
@@ -72,10 +72,10 @@ fun Spacer32() {
 @Composable
 fun Loading() {
     Column(
-        Modifier.fillMaxSize(),
+        Modifier.fillMaxSize().background(MaterialTheme.colors.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        CircularProgressIndicator(modifier = Modifier.wrapContentWidth(Alignment.CenterHorizontally).background(Color.Blue))
+        CircularProgressIndicator(modifier = Modifier.wrapContentWidth(Alignment.CenterHorizontally))
     }
 }

@@ -23,11 +23,11 @@ private val NunitoSansFontFamily = fontFamily(
     font(R.font.nunitosans_extrabold, FontWeight.ExtraBold)
 )
 
-private val DawningofaNewDayFontFamily = fontFamily(
+private val DawningOfANewDayFontFamily = fontFamily(
     font(R.font.dawningofanewday)
 )
 
-val resumeTypography = Typography(
+val ResumeTypography = Typography(
     defaultFontFamily = NunitoSansFontFamily,
     h1 = TextStyle(
         fontFamily = LatoFontFamily,

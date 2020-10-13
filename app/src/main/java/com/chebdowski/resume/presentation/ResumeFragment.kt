@@ -43,8 +43,7 @@ class ResumeFragment : BaseFragment() {
     @Composable
     private fun HandlePerson(person: Person?) {
         if (person != null) {
-            Loading()
-//            ComposeResume(person)
+            ComposeResume(person)
         } else {
             Loading()
         }
@@ -53,8 +52,15 @@ class ResumeFragment : BaseFragment() {
     @Composable
     private fun HandleFailure(failure: Failure?, context: Context) {
         when (failure) {
+            is Failure.BadRequest -> notify(context.getString(R.string.failure_bad_request))
+            is Failure.Unauthorized -> notify(context.getString(R.string.failure_unauthorized))
+            is Failure.Forbidden -> notify(context.getString(R.string.failure_forbidden))
+            is Failure.NotFound -> notify(context.getString(R.string.failure_not_found))
+            is Failure.RequestTimeout -> notify(context.getString(R.string.failure_request_timeout))
             is Failure.ServerError -> notify(context.getString(R.string.failure_server_error))
             is PersonFailure.PersonNotAvailable -> notify(context.getString(R.string.failure_person_not_available))
+            is Failure.RequestError -> notify(context.getString(R.string.failure_request))
+            is Failure.UnhandledError -> notify(context.getString(R.string.failure_unhandled_request, failure.errorCode))
         }
     }
 }
