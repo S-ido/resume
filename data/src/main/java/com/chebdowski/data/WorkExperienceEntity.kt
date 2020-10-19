@@ -1,8 +1,10 @@
 package com.chebdowski.data
 
+import androidx.annotation.Keep
 import com.chebdowski.domain.person.Work
 import com.chebdowski.domain.person.WorkExperience
 
+@Keep
 class WorkExperienceEntity(
     private val experience: List<WorkEntity>
 ) {

@@ -1,8 +1,10 @@
 package com.chebdowski.data
 
+import androidx.annotation.Keep
 import com.chebdowski.domain.person.Responsibilities
 import com.chebdowski.domain.person.Work
 
+@Keep
 class WorkEntity(
     private val position: String,
     private val company: String,

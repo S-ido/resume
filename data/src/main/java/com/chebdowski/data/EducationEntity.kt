@@ -1,7 +1,9 @@
 package com.chebdowski.data
 
+import androidx.annotation.Keep
 import com.chebdowski.domain.person.Education
 
+@Keep
 data class EducationEntity(
     val degree: String,
     val school: String,
